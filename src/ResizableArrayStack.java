@@ -109,4 +109,55 @@ public class ResizableArrayStack<T> implements StackInterface<T> {
             topIndex--;
         }
     }
+    
+    public static int evaluatePostfix(String postfix)
+    {
+        //Evaluates a postifx expresssion.
+        char[] c = postfix.toCharArray();
+        StackInterface valueStack = new ResizableArrayStack(c.length);
+        int operandOne;
+        int operandTwo;
+        int result;
+
+        for(int i = 0; i < postfix.length(); i++)
+        {
+            char nextCharacter = postfix.charAt(i);
+            switch (nextCharacter)
+            {
+                case '+':
+                    operandTwo = Integer.parseInt(String.valueOf(valueStack.pop()));
+                    operandOne = Integer.parseInt(String.valueOf(valueStack.pop()));
+                    result = operandOne + operandTwo;
+                    valueStack.push(result);
+                    break;
+                case '-':
+                    operandTwo = Integer.parseInt(String.valueOf(valueStack.pop()));
+                    operandOne = Integer.parseInt(String.valueOf(valueStack.pop()));
+                    result = operandOne - operandTwo;
+                    valueStack.push(result);
+                    break;
+                case '*':
+                    operandTwo = Integer.parseInt(String.valueOf(valueStack.pop()));
+                    operandOne = Integer.parseInt(String.valueOf(valueStack.pop()));
+                    result = operandOne * operandTwo;
+                    valueStack.push(result);
+                    break;
+                case '/':
+                    operandTwo = Integer.parseInt(String.valueOf(valueStack.pop()));
+                    operandOne = Integer.parseInt(String.valueOf(valueStack.pop()));
+                    result = operandOne / operandTwo;
+                    valueStack.push(result);
+                    break;
+                case '^':
+                    operandTwo = Integer.parseInt(String.valueOf(valueStack.pop()));
+                    operandOne = Integer.parseInt(String.valueOf(valueStack.pop()));
+                    result = operandOne ^ operandTwo;
+                    valueStack.push(result);
+                    break;
+                default:
+                    valueStack.push(nextCharacter); 
+            }
+        }
+        return (int) valueStack.peek();
+    }
 }
