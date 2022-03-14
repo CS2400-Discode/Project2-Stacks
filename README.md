@@ -19,3 +19,4 @@ Video Link:
 
 Javadoc Start Page:
 -
+https://cs2400-discode.github.io/Project2-Stacks/StackInterface.html
