@@ -4,7 +4,6 @@ import java.util.Stack;
 
 /***
  * Contains methods for a resizable array stack
- * Contains the evaluateToPostFix algorithm
  * @param <T> A generic data type
  */
 public class ResizableArrayStack<T> implements StackInterface<T> {

@@ -3,7 +3,10 @@
  */
 public class LinkedStackTest {
 
-
+    /***
+     * Main method
+     * @param args
+     */
     public static void main(String args[])
     {
     String exp = "a*b/(c-a)+d*e";
