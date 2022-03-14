@@ -49,6 +49,7 @@ public class LinkedStack<T> implements StackInterface<T> {
         topNode = null;
     }
 
+
     /***
      * checks the priority of the arithmetic operation
      * @param operation an arithmetic operation
@@ -117,6 +118,7 @@ public class LinkedStack<T> implements StackInterface<T> {
         }
         return postfix;
     }
+
 
     /** Creates nodes that can be used in other classes */
     private class Node
