@@ -2,6 +2,11 @@ import java.util.Arrays;
 import java.util.EmptyStackException;
 import java.util.Stack;
 
+/***
+ * Contains methods for a resizable array stack
+ * Contains the evaluateToPostFix algorithm
+ * @param <T> A generic data type
+ */
 public class ResizableArrayStack<T> implements StackInterface<T> {
     private T[] stack;
     private int topIndex;
@@ -109,7 +114,12 @@ public class ResizableArrayStack<T> implements StackInterface<T> {
             topIndex--;
         }
     }
-    
+
+    /***
+     * Evaluates a postfix expression
+     * @param postfix a string to be evaluated
+     * @return an integer with the answer of the postfix expression
+     */
     public static int evaluatePostfix(String postfix)
     {
         //Evaluates a postifx expresssion.

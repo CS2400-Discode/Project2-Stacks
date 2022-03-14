@@ -1,5 +1,10 @@
 import java.util.EmptyStackException;
 
+/***
+ * Contains methods for a linked stack
+ * Contains the convertToPostFix algorithm
+ * @param <T> A generic data type
+ */
 public class LinkedStack<T> implements StackInterface<T> {
     private Node topNode; //first node in the chain
 

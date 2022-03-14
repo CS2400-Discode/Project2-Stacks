@@ -1,3 +1,6 @@
+/***
+ * Tests the convertToPostFix algorithm
+ */
 public class LinkedStackTest {
 
 

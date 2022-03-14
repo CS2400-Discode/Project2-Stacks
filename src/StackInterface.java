@@ -1,5 +1,9 @@
 import java.util.EmptyStackException;
 
+/***
+ * Interface for stacks
+ * @param <T> generic data type
+ */
 public interface StackInterface<T> {
     /** Adds a new entry to the top of this stack.
      @param newEntry  An object to be added to the stack. */
