@@ -1,7 +1,7 @@
 /***
  * Tests the evaluteToPostFix algorithm
  */
-public class ArrayStackTest {
+public class CalculatorTest {
 
     /***
      * Main method

@@ -1,7 +1,7 @@
 /***
  * Tests the convertToPostFix algorithm
  */
-public class LinkedStackTest {
+public class Calc {
 
     /***
      * Main method
