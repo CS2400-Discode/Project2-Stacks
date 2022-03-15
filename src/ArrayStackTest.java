@@ -9,6 +9,8 @@ public class ArrayStackTest {
      */
     public static void main(String args[])
     {
-
+        String exp = "23*42-/56*+";
+        System.out.println("Postfix Expression: " + exp);
+        System.out.println("Evaluated Postfix Expression: " + ResizableArrayStack.evaluatePostfix(exp));
     }
 }

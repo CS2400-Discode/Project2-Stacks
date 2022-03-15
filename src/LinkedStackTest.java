@@ -12,7 +12,6 @@ public class LinkedStackTest {
     String exp = "a*b/(c-a)+d*e";
     System.out.println("Infix Expression: " + exp);
     System.out.println("Postfix Expression: " + LinkedStack.convertToPostFix(exp));
-
     }
 
 }
