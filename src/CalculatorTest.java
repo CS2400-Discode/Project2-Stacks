@@ -1,5 +1,5 @@
 /***
- * Tests the evaluteToPostFix algorithm
+ * Tests the evalutePostFix algorithm
  */
 public class CalculatorTest {
 
