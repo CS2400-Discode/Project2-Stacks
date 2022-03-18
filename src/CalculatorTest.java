@@ -1,5 +1,5 @@
 /***
- * Tests the evalutePostFix algorithm
+ * Tests the convertToPostFix and evaluatePostfix algorithms
  */
 public class CalculatorTest {
 
@@ -9,8 +9,10 @@ public class CalculatorTest {
      */
     public static void main(String args[])
     {
-        String exp = "23*42-/56*+";
-        System.out.println("Postfix Expression: " + exp);
-        System.out.println("Evaluated Postfix Expression: " + ResizableArrayStack.evaluatePostfix(exp));
+        String exp = "a*b/(c-a)+d*e";
+        System.out.println("Infix Expression: " + exp);
+        System.out.println("Postfix Expression: " + Calc.convertToPostFix(exp));
+        String exp2 = "23*42-/56*+";
+        System.out.println("Evaluated Postfix Expression: " + Calc.evaluatePostfix(exp2));
     }
 }
