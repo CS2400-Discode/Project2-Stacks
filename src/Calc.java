@@ -122,7 +122,16 @@ public class Calc {
                     valueStack.push(result);
                     break;
                 default:
-                    valueStack.push(nextCharacter);
+                    int x = 0;
+
+                    while(Character.isDigit(nextCharacter))
+                    {
+                        x = x * 10 + Integer.parseInt(String.valueOf(nextCharacter));
+                        i++;
+                        nextCharacter = postfix.charAt(i);
+                    }
+
+                    valueStack.push(x);
             }
         }
         return (int) valueStack.peek();
