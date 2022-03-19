@@ -121,6 +121,8 @@ public class Calc {
                     result = (int) Math.pow(operandOne, operandTwo);
                     valueStack.push(result);
                     break;
+                case ' ':
+                    break;
                 default:
                     int x = 0;
 
@@ -146,7 +148,7 @@ public class Calc {
         String exp = "a*b/(c-a)+d*e";
         System.out.println("Infix Expression: " + exp);
         System.out.println("Postfix Expression: " + Calc.convertToPostFix(exp));
-        String exp2 = "23*42-/56*+";
+        String exp2 = "2 3 * 4 2 - / 5 6 * +";
         System.out.println("Evaluated Postfix Expression: " + Calc.evaluatePostfix(exp2));
     }
 
