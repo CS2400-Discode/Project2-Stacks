@@ -1,7 +1,5 @@
 import static org.junit.jupiter.api.Assertions.*;
 
-class CalcTest {
-
-
+class CalculatorTest {
 
 }
