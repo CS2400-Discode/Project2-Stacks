@@ -118,7 +118,7 @@ public class Calc {
                 case '^':
                     operandTwo = Integer.parseInt(String.valueOf(valueStack.pop()));
                     operandOne = Integer.parseInt(String.valueOf(valueStack.pop()));
-                    result = operandOne ^ operandTwo;
+                    result = (int) Math.pow(operandOne, operandTwo);
                     valueStack.push(result);
                     break;
                 default:
