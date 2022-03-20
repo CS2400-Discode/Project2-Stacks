@@ -7,7 +7,9 @@ Owen Lovett, Nil Patel, Shane Thomas
 
 Contributions:
 -
-
+Shane Thomas: Manual conversion of Infix to Postfix & evaluating Postfix, Infix to Postfix test cases
+Owen Lovett:
+Nil Patel:
 
 Extra Features:
 -
