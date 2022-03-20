@@ -11,7 +11,7 @@ Shane Thomas: Manual conversion of Infix to Postfix & evaluating Postfix, Infix 
 
 Owen Lovett: 
 
-Nil Patel:
+Nil Patel: convertToPostfix algorithm
 
 Extra Features:
 -
