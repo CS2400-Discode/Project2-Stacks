@@ -79,7 +79,7 @@ public class Calc {
      */
     public static int evaluatePostfix(String postfix)
     {
-        //Evaluates a postifx expresssion.
+        //A space is required in between each variable and operand. Ex: 2 2 +
         char[] c = postfix.toCharArray();
         StackInterface valueStack = new ResizableArrayStack(c.length);
         int operandOne;
@@ -89,52 +89,60 @@ public class Calc {
         for(int i = 0; i < postfix.length(); i++)
         {
             char nextCharacter = postfix.charAt(i);
-            switch (nextCharacter)
+
+            if (Character.isDigit(nextCharacter))
             {
-                case '+':
-                    operandTwo = Integer.parseInt(String.valueOf(valueStack.pop()));
-                    operandOne = Integer.parseInt(String.valueOf(valueStack.pop()));
-                    result = operandOne + operandTwo;
-                    valueStack.push(result);
-                    break;
-                case '-':
-                    operandTwo = Integer.parseInt(String.valueOf(valueStack.pop()));
-                    operandOne = Integer.parseInt(String.valueOf(valueStack.pop()));
-                    result = operandOne - operandTwo;
-                    valueStack.push(result);
-                    break;
-                case '*':
-                    operandTwo = Integer.parseInt(String.valueOf(valueStack.pop()));
-                    operandOne = Integer.parseInt(String.valueOf(valueStack.pop()));
-                    result = operandOne * operandTwo;
-                    valueStack.push(result);
-                    break;
-                case '/':
-                    operandTwo = Integer.parseInt(String.valueOf(valueStack.pop()));
-                    operandOne = Integer.parseInt(String.valueOf(valueStack.pop()));
-                    result = operandOne / operandTwo;
-                    valueStack.push(result);
-                    break;
-                case '^':
-                    operandTwo = Integer.parseInt(String.valueOf(valueStack.pop()));
-                    operandOne = Integer.parseInt(String.valueOf(valueStack.pop()));
-                    result = (int) Math.pow(operandOne, operandTwo);
-                    valueStack.push(result);
-                    break;
-                case ' ':
-                    break;
-                default:
-                    int x = 0;
+                int x = 0;
 
-                    while(Character.isDigit(nextCharacter))
-                    {
-                        x = x * 10 + Integer.parseInt(String.valueOf(nextCharacter));
-                        i++;
-                        nextCharacter = postfix.charAt(i);
-                    }
+                while(Character.isDigit(nextCharacter))
+                {
+                    x = x * 10 + Integer.parseInt(String.valueOf(nextCharacter));
+                    i++;
+                    nextCharacter = postfix.charAt(i);
+                }
 
-                    valueStack.push(x);
+                valueStack.push(x);
             }
+
+            else
+            {
+                switch (nextCharacter)
+                {
+                    case '+':
+                        operandTwo = Integer.parseInt(String.valueOf(valueStack.pop()));
+                        operandOne = Integer.parseInt(String.valueOf(valueStack.pop()));
+                        result = operandOne + operandTwo;
+                        valueStack.push(result);
+                        break;
+                    case '-':
+                        operandTwo = Integer.parseInt(String.valueOf(valueStack.pop()));
+                        operandOne = Integer.parseInt(String.valueOf(valueStack.pop()));
+                        result = operandOne - operandTwo;
+                        valueStack.push(result);
+                        break;
+                    case '*':
+                        operandTwo = Integer.parseInt(String.valueOf(valueStack.pop()));
+                        operandOne = Integer.parseInt(String.valueOf(valueStack.pop()));
+                        result = operandOne * operandTwo;
+                        valueStack.push(result);
+                        break;
+                    case '/':
+                        operandTwo = Integer.parseInt(String.valueOf(valueStack.pop()));
+                        operandOne = Integer.parseInt(String.valueOf(valueStack.pop()));
+                        result = operandOne / operandTwo;
+                        valueStack.push(result);
+                        break;
+                    case '^':
+                        operandTwo = Integer.parseInt(String.valueOf(valueStack.pop()));
+                        operandOne = Integer.parseInt(String.valueOf(valueStack.pop()));
+                        result = (int) Math.pow(operandOne, operandTwo);
+                        valueStack.push(result);
+                        break;
+                    default:
+                        break;
+                }
+            }
+
         }
         return (int) valueStack.peek();
     }
