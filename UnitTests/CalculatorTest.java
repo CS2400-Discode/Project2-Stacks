@@ -35,4 +35,24 @@ class CalculatorTest {
         String postFix = Calc.convertToPostFix(exp);
         assertEquals("*/+-", postFix);
     }
+    
+    /**
+     * Tests to see if unexpected characters affect the evaluation of postfix expression.
+     */
+    @Test
+    void unexpectedPostfix() {
+        String exp = "2 s 2 + #";
+        int postFix = Calc.evaluatePostfix(exp);
+        assertEquals(4, postFix);
+    }
+
+    /**
+     * Tests to see if multiple digits works in evaluatePostfix.
+     */
+    @Test
+    void digitsPostfix() {
+        String exp = "2 10 ^ 100 +";
+        int postFix = Calc.evaluatePostfix(exp);
+        assertEquals(1124, postFix);
+    }
 }
